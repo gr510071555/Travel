@@ -1,6 +1,6 @@
 <template>
   <div class="icons">
-    <swiper>
+    <swiper :options="swiperOption">
       <swiper-slide v-for="(page, index) of pages" :key="index">
         <div class="icon" v-for="item of page" :key="item.id">
           <div class="icon-img">
@@ -17,54 +17,13 @@
 export default {
   data () {
     return {
-      iconList: [
-        {
-          id: '0001',
-          imgUrl: 'https://pics.lvjs.com.cn/pics/super/2018/04/1523426245_96136.jpg',
-          desc: '热门景点'
-        },
-        {
-          id: '0002',
-          imgUrl: 'https://pics.lvjs.com.cn/pics/super/2018/04/1523426245_96136.jpg',
-          desc: '热门景点'
-        },
-        {
-          id: '0003',
-          imgUrl: 'https://pics.lvjs.com.cn/pics/super/2018/04/1523426245_96136.jpg',
-          desc: '热门景点'
-        },
-        {
-          id: '0004',
-          imgUrl: 'https://pics.lvjs.com.cn/pics/super/2018/04/1523426245_96136.jpg',
-          desc: '热门景点'
-        },
-        {
-          id: '0005',
-          imgUrl: 'https://pics.lvjs.com.cn/pics/super/2018/04/1523426245_96136.jpg',
-          desc: '滑雪季'
-        },
-        {
-          id: '0006',
-          imgUrl: 'https://pics.lvjs.com.cn/pics/super/2018/04/1523426245_96136.jpg',
-          desc: '泡温泉'
-        },
-        {
-          id: '0007',
-          imgUrl: 'https://pics.lvjs.com.cn/pics/super/2018/04/1523426245_96136.jpg',
-          desc: '动植园'
-        },
-        {
-          id: '0008',
-          imgUrl: 'https://pics.lvjs.com.cn/pics/super/2018/04/1523426245_96136.jpg',
-          desc: '热门景点'
-        },
-        {
-          id: '0009',
-          imgUrl: 'https://pics.lvjs.com.cn/pics/super/2018/04/1523426245_96136.jpg',
-          desc: '热门景点'
-        }
-      ]
+      swiperOption: {
+        autoplay: false
+      }
     }
+  },
+  props: {
+    iconList: Array
   },
   computed: {
     pages () {
