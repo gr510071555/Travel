@@ -73,6 +73,7 @@ export default {
     // overflow: hidden
     background: $bgColor
     font-size: .32rem
+    z-index: 2
     .header-back
       position: absolute
       top: 0
